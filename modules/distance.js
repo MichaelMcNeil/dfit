@@ -3,15 +3,13 @@ import { DEFAULT_DISTANCE_UNIT, RELATIVE_DISTANCE_UNIT } from "./constants.js";
 const standardize = (value, unit) =>
   value * RELATIVE_DISTANCE_UNIT[unit || DEFAULT_DISTANCE_UNIT];
 
-export const distance = (value, unit) => Distance.of(value, unit);
-
-class Distance {
+export class Distance {
   static of(value, unit) {
     return new Distance(value, unit);
   }
 
   constructor(value, unit) {
-    this.distance = standardize(value, unit);
+    this.distance = standardize(value, unit) || 0;
     return this;
   }
 

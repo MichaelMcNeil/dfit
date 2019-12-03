@@ -5,24 +5,16 @@ import {
 } from "./constants.js";
 import moment from "moment";
 
-const utc = (timeValue, timeFormat) => {
-  return moment.utc(
-    `1970-01-01 ${timeValue}`,
-    `YYYY-MM-DD ${timeFormat || DEFAULT_TIME_FORMAT}`
-  );
+const duration = (timeValue, timeFormat) => {
+  return moment.duration(timeValue, `${timeFormat || DEFAULT_TIME_FORMAT}`);
 };
 
 const standardize = (value, format) =>
   value && value._isAMomentObject
     ? value
-    : utc(
-        value || "00:00:00.000",
-        value && format ? format : DEFAULT_TIME_FORMAT
-      );
+    : duration(value || 0, value && format ? format : DEFAULT_TIME_FORMAT);
 
-export const time = (value, format) => Time.of(value, format);
-
-class Time {
+export class Time {
   static of(value, format) {
     return new Time(value, format);
   }
@@ -32,12 +24,18 @@ class Time {
     return this;
   }
 
-  asMoment() {
+  asMomentDuration() {
     return this.time;
   }
 
+  asMoment() {
+    return moment.utc(this.time.asMilliseconds());
+  }
+
   format(timeFormat) {
-    return this.time.format(timeFormat || DEFAULT_TIME_FORMAT);
+    return moment
+      .utc(this.time.asMilliseconds())
+      .format(timeFormat || DEFAULT_TIME_FORMAT);
   }
 
   convert(timeUnit) {
@@ -77,17 +75,21 @@ class Time {
   }
 
   substract(timeValue, timeFormat) {
-    this.time = moment.utc(
+    this.time = moment.duration(
       this.time -
-        (timeValue._isAMomentObject ? timeValue : utc(timeValue, timeFormat))
+        (timeValue._isAMomentObject
+          ? timeValue
+          : duration(timeValue, timeFormat))
     );
     return this;
   }
 
   add(timeValue, timeFormat) {
-    this.time = moment.utc(
+    this.time = moment.duration(
       this.time +
-        (timeValue._isAMomentObject ? timeValue : utc(timeValue, timeFormat))
+        (timeValue._isAMomentObject
+          ? timeValue
+          : duration(timeValue, timeFormat))
     );
     return this;
   }
