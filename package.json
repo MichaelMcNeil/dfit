@@ -1,0 +1,11 @@
+{
+  "name": "dfit",
+  "version": "0.1.0",
+  "description": "training tools for the dimfit app",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Michael McNeil",
+  "license": "ISC"
+}
