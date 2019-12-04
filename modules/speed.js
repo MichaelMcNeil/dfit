@@ -1,4 +1,4 @@
-export class Speed {
+class Speed {
   static of(interval) {
     return new Speed(interval);
   }
@@ -21,3 +21,7 @@ export class Speed {
     return this.convert("mile", "h");
   }
 }
+
+module.exports = {
+  Speed
+};

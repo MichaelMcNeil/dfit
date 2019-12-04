@@ -1,9 +1,9 @@
-import { Time } from "./time.js";
-import { Distance } from "./distance.js";
-import { Speed } from "./speed.js";
-import { Pace } from "./pace.js";
+const { Time } = require("./time.js");
+const { Distance } = require("./distance.js");
+const { Speed } = require("./speed.js");
+const { Pace } = require("./pace.js");
 
-export class Interval {
+class Interval {
   static of(distance, distanceUnit, time, timeFormat) {
     return new Interval(distance, distanceUnit, time, timeFormat);
   }
@@ -22,3 +22,5 @@ export class Interval {
     return Speed.of(this);
   }
 }
+
+module.exports = { Interval };

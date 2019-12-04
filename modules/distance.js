@@ -1,9 +1,12 @@
-import { DEFAULT_DISTANCE_UNIT, RELATIVE_DISTANCE_UNIT } from "./constants.js";
+const {
+  DEFAULT_DISTANCE_UNIT,
+  RELATIVE_DISTANCE_UNIT
+} = require("./constants.js");
 
 const standardize = (value, unit) =>
   value * RELATIVE_DISTANCE_UNIT[unit || DEFAULT_DISTANCE_UNIT];
 
-export class Distance {
+class Distance {
   static of(value, unit) {
     return new Distance(value, unit);
   }
@@ -64,3 +67,7 @@ export class Distance {
     return this;
   }
 }
+
+module.exports = {
+  Distance
+};

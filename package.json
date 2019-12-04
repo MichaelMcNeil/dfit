@@ -1,6 +1,6 @@
 {
   "name": "dfit",
-  "version": "0.1.0",
+  "version": "0.0.5",
   "description": "training tools for the dimfit app",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,5 @@
   "license": "ISC",
   "dependencies": {
     "moment": "^2.24.0"
-  },
-  "type": "module"
+  }
 }

@@ -1,26 +1,30 @@
-import {
+const {
   DEFAULT_TIME_FORMAT,
   DEFAULT_TIME_UNIT,
   RELATIVE_TIME_UNIT
-} from "./constants.js";
-import moment from "moment";
+} = require("./constants.js");
+const moment = require("moment");
 
-const duration = (timeValue, timeFormat) => {
-  return moment.duration(timeValue, `${timeFormat || DEFAULT_TIME_FORMAT}`);
+const standardize = value => {
+  return value && value._isAMomentObject ? value : moment.duration(value || 0);
 };
 
-const standardize = (value, format) =>
+const standardizeWithFormat = (value, format) =>
   value && value._isAMomentObject
     ? value
-    : duration(value || 0, value && format ? format : DEFAULT_TIME_FORMAT);
+    : moment.duration(value || 0, format || DEFAULT_TIME_FORMAT);
 
-export class Time {
-  static of(value, format) {
+class Time {
+  static of(value, format = undefined) {
     return new Time(value, format);
   }
 
   constructor(timeValue, timeFormat) {
-    this.time = standardize(timeValue, timeFormat);
+    this.time =
+      timeFormat === undefined
+        ? standardize(timeValue)
+        : standardizeWithFormat(timeValue, timeFormat);
+
     return this;
   }
 
@@ -32,10 +36,16 @@ export class Time {
     return moment.utc(this.time.asMilliseconds());
   }
 
+  getHoursMinutesSeconds() {
+    const hours = this.time.hours();
+    const minutes = this.time.minutes();
+    const seconds = this.time.seconds();
+
+    return { hours, minutes, seconds };
+  }
+
   format(timeFormat) {
-    return moment
-      .utc(this.time.asMilliseconds())
-      .format(timeFormat || DEFAULT_TIME_FORMAT);
+    return this.asMoment().format(timeFormat || DEFAULT_TIME_FORMAT);
   }
 
   convert(timeUnit) {
@@ -46,7 +56,7 @@ export class Time {
   }
 
   _update(value, format) {
-    this.time = standardize(value, format);
+    this.time = standardizeWithFormat(value, format);
     return this;
   }
 
@@ -79,7 +89,7 @@ export class Time {
       this.time -
         (timeValue._isAMomentObject
           ? timeValue
-          : duration(timeValue, timeFormat))
+          : standardizeWithFormat(timeValue, timeFormat))
     );
     return this;
   }
@@ -89,12 +99,22 @@ export class Time {
       this.time +
         (timeValue._isAMomentObject
           ? timeValue
-          : duration(timeValue, timeFormat))
+          : standardizeWithFormat(timeValue, timeFormat))
     );
     return this;
   }
 
   pretty() {
-    return this.time.format("m:ss");
+    const { hours, minutes, seconds } = this.getHoursMinutesSeconds();
+
+    return `${hours > 0 ? hours + ":" : ""}${zeroIf(
+      hours > 0 && minutes < 10
+    )}${minutes}:${zeroIf(seconds < 10)}${seconds}`;
   }
 }
+
+const colonIf = condition => (condition ? ":" : "");
+
+const zeroIf = condition => (condition ? "0" : "");
+
+module.exports = { Time };

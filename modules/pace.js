@@ -1,7 +1,6 @@
-import moment from "moment";
-import { Time } from "./time.js";
+const { Time } = require("./time.js");
 
-export class Pace {
+class Pace {
   static of(interval) {
     return new Pace(interval);
   }
@@ -14,7 +13,8 @@ export class Pace {
 
   convert(distanceUnit) {
     return Time.of(
-      moment.utc(this.time.milliseconds() / this.distance.convert(distanceUnit))
+      this.time.milliseconds() / this.distance.convert(distanceUnit),
+      "ms"
     );
   }
 
@@ -34,3 +34,7 @@ export class Pace {
     return this.convert("mile");
   }
 }
+
+module.exports = {
+  Pace
+};
