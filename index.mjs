@@ -1,5 +1,5 @@
-const { Time } = require("./modules/time.js");
-const { Distance } = require("./modules/distance.js");
+const { Time } = require("./modules/duration/index.js/index.js.js");
+const { Distance } = require("./modules/distance/index.js/index.js");
 const { Interval } = require("./modules/interval.js");
 
 export const distance = (value, unit) => Distance.of(value, unit);

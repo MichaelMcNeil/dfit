@@ -4,11 +4,14 @@
   "description": "training tools for the dimfit app",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "jest"
   },
   "author": "Michael McNeil",
   "license": "ISC",
   "dependencies": {
     "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
   }
 }
