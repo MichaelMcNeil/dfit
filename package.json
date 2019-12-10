@@ -1,6 +1,6 @@
 {
   "name": "dfit",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "training tools for the dimfit app",
   "main": "index.js",
   "scripts": {

@@ -1,8 +1,22 @@
-# dfit - For Interval, Pace/Speed, Distance, and Duration - NEEDbadeg
+# dfit
 
-This is the Squarespace Base Template, a minimal Squarespace template using **_Node Package Manager_** for local development, module installation and deployment.
+For Interval, Pace/Speed, Distance, and Duration calculations
 
-### Installation and use
+### Usage
+
+```
+import * as dfit from 'dfit'
+
+// Objects
+dfit.interval();
+dfit.distance();
+dfit.duration();
+dfit.speed();
+dfit.pace();
+
+```
+
+### Installation
 
 **_Prerequisite:_**
 
