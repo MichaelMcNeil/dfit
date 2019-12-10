@@ -15,11 +15,12 @@ dfit.speed();
 dfit.pace();
 ```
 
-#### Creating Durations
+#### Creating a Duration
 
 ```javascript
-// with an object
 let dur;
+
+// with an object - can accept any keys allowed by moment.duration()  {y|M|w|d|h|m|s|ms}
 dur = dfit.duration({ h: 2, m: 55, s: 00 });
 dur.pretty(); // '2:55:00'
 
@@ -39,6 +40,33 @@ dur = dfit.duration("3:00:00").subtract(5, "m");
 dur.pretty(); // '2:55:00'
 ```
 
+#### Creating a Distance
+
+```javascript
+let dist;
+
+// with an object - accepted units {km|m|cm|mm|mile|miles}
+dist = dfit.distance({ miles: 26.2 });
+
+// with a number and unit
+dist = dfit.distance(10, "km");
+
+// initialize to 0
+dist = dfit.distance();
+```
+
+#### Creating a Pace
+
+```javascript
+let pace;
+
+// with Duration and Distance
+pace = dfit.pace(dfit.duration({ h: 2, m: 55 }), dfit.distance(26.2, "miles"));
+
+// with duration/distance values and units  (duration, distance, durationUnit, distanceUnit)
+pace = dfit.pace("2:55:00", 26.2, null, "miles");
+```
+
 ### Installation
 
 **_Prerequisite:_**
@@ -46,7 +74,9 @@ dur.pretty(); // '2:55:00'
 Install package:
 
 ```
+
 npm install dfit
+
 ```
 
 ### Dependencies
@@ -76,3 +106,7 @@ Cleans the build folder, copies squarespace files (jsont, less, assets folder co
     |--- package.json        <-- defines build commands, template module dependencies
 
 <!-- ## Copyright and License -->
+
+```
+
+```
