@@ -1,4 +1,4 @@
-# dfit - For Interval, Pace/Speed, Distance, and Duration
+# dfit - For Interval, Pace/Speed, Distance, and Duration - NEEDbadeg
 
 This is the Squarespace Base Template, a minimal Squarespace template using **_Node Package Manager_** for local development, module installation and deployment.
 
