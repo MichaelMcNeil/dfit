@@ -4,8 +4,8 @@ For Interval, Pace/Speed, Distance, and Duration calculations
 
 ### Usage
 
-```
-import * as dfit from 'dfit'
+```javascript
+import * as dfit from "dfit";
 
 // Objects
 dfit.interval();
@@ -14,6 +14,20 @@ dfit.duration();
 dfit.speed();
 dfit.pace();
 
+// Creating Durations
+
+// with an object
+dfit.duration({ h: 2, m: 55, s: 00 });
+
+// with a string
+dfit.duration("2:55:00");
+
+// with a number and unit
+dfit.duration(2, "h");
+
+// adding or subtracting
+dfit.duration(2, "h").add({ m: 55 });
+dfit.duration("3:00:00").subtract(5, "m");
 ```
 
 ### Installation
