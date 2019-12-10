@@ -4,7 +4,8 @@
   "description": "training tools for the dimfit app",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "author": "Michael McNeil",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "moment": "^2.24.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.9",
     "jest": "^24.9.0"
   }
 }
