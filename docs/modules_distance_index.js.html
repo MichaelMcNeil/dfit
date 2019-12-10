@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>modules/distance/index.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Interval.html">Interval</a></li><li></li><li><a href="module-Distance-Distance.html">Distance</a><ul class='methods'><li data-type='method'><a href="module-Distance-Distance.html#._constructFromObj">_constructFromObj</a></li><li data-type='method'><a href="module-Distance-Distance.html#._constructFromObj">_constructFromObj</a></li><li data-type='method'><a href="module-Distance-Distance.html#._constructFromValueAndUnit">_constructFromValueAndUnit</a></li><li data-type='method'><a href="module-Distance-Distance.html#._constructFromValueAndUnit">_constructFromValueAndUnit</a></li><li data-type='method'><a href="module-Distance-Distance.html#_updateAndChain">_updateAndChain</a></li><li data-type='method'><a href="module-Distance-Distance.html#_updateAndChain">_updateAndChain</a></li><li data-type='method'><a href="module-Distance-Distance.html#add">add</a></li><li data-type='method'><a href="module-Distance-Distance.html#add">add</a></li><li data-type='method'><a href="module-Distance-Distance.html#cm">cm</a></li><li data-type='method'><a href="module-Distance-Distance.html#cm">cm</a></li><li data-type='method'><a href="module-Distance-Distance.html#convert">convert</a></li><li data-type='method'><a href="module-Distance-Distance.html#convert">convert</a></li><li data-type='method'><a href="module-Distance-Distance.html#km">km</a></li><li data-type='method'><a href="module-Distance-Distance.html#km">km</a></li><li data-type='method'><a href="module-Distance-Distance.html#m">m</a></li><li data-type='method'><a href="module-Distance-Distance.html#m">m</a></li><li data-type='method'><a href="module-Distance-Distance.html#miles">miles</a></li><li data-type='method'><a href="module-Distance-Distance.html#miles">miles</a></li><li data-type='method'><a href="module-Distance-Distance.html#mm">mm</a></li><li data-type='method'><a href="module-Distance-Distance.html#mm">mm</a></li><li data-type='method'><a href="module-Distance-Distance.html#subtract">subtract</a></li><li data-type='method'><a href="module-Distance-Distance.html#subtract">subtract</a></li></ul></li><li></li><li><a href="module-Duration-Duration.html">Duration</a><ul class='methods'><li data-type='method'><a href="module-Duration-Duration.html#._constructFromDistanceAndPace">_constructFromDistanceAndPace</a></li><li data-type='method'><a href="module-Duration-Duration.html#._constructFromDistanceAndPace">_constructFromDistanceAndPace</a></li><li data-type='method'><a href="module-Duration-Duration.html#_updateAndChain">_updateAndChain</a></li><li data-type='method'><a href="module-Duration-Duration.html#_updateAndChain">_updateAndChain</a></li><li data-type='method'><a href="module-Duration-Duration.html#add">add</a></li><li data-type='method'><a href="module-Duration-Duration.html#add">add</a></li><li data-type='method'><a href="module-Duration-Duration.html#asMoment">asMoment</a></li><li data-type='method'><a href="module-Duration-Duration.html#asMoment">asMoment</a></li><li data-type='method'><a href="module-Duration-Duration.html#asMomentDuration">asMomentDuration</a></li><li data-type='method'><a href="module-Duration-Duration.html#asMomentDuration">asMomentDuration</a></li><li data-type='method'><a href="module-Duration-Duration.html#format">format</a></li><li data-type='method'><a href="module-Duration-Duration.html#format">format</a></li><li data-type='method'><a href="module-Duration-Duration.html#hours">hours</a></li><li data-type='method'><a href="module-Duration-Duration.html#hours">hours</a></li><li data-type='method'><a href="module-Duration-Duration.html#inParts">inParts</a></li><li data-type='method'><a href="module-Duration-Duration.html#inParts">inParts</a></li><li data-type='method'><a href="module-Duration-Duration.html#milliseconds">milliseconds</a></li><li data-type='method'><a href="module-Duration-Duration.html#milliseconds">milliseconds</a></li><li data-type='method'><a href="module-Duration-Duration.html#minutes">minutes</a></li><li data-type='method'><a href="module-Duration-Duration.html#minutes">minutes</a></li><li data-type='method'><a href="module-Duration-Duration.html#pretty">pretty</a></li><li data-type='method'><a href="module-Duration-Duration.html#pretty">pretty</a></li><li data-type='method'><a href="module-Duration-Duration.html#seconds">seconds</a></li><li data-type='method'><a href="module-Duration-Duration.html#seconds">seconds</a></li><li data-type='method'><a href="module-Duration-Duration.html#substract">substract</a></li><li data-type='method'><a href="module-Duration-Duration.html#substract">substract</a></li></ul></li><li></li><li><a href="module-Pace-Pace.html">Pace</a><ul class='methods'><li data-type='method'><a href="module-Pace-Pace.html#convert">convert</a></li><li data-type='method'><a href="module-Pace-Pace.html#convert">convert</a></li><li data-type='method'><a href="module-Pace-Pace.html#per_km">per_km</a></li><li data-type='method'><a href="module-Pace-Pace.html#per_km">per_km</a></li><li data-type='method'><a href="module-Pace-Pace.html#per_mile">per_mile</a></li><li data-type='method'><a href="module-Pace-Pace.html#per_mile">per_mile</a></li></ul></li><li></li><li><a href="Speed.html">Speed</a><ul class='methods'><li data-type='method'><a href="Speed.html#convert">convert</a></li><li data-type='method'><a href="Speed.html#convert">convert</a></li><li data-type='method'><a href="Speed.html#km_h">km_h</a></li><li data-type='method'><a href="Speed.html#km_h">km_h</a></li><li data-type='method'><a href="Speed.html#mph">mph</a></li><li data-type='method'><a href="Speed.html#mph">mph</a></li></ul></li><li></li></ul><h3>Modules</h3><ul><li><a href="module-dfit.html">dfit</a><ul class='methods'><li data-type='method'><a href="module-dfit.html#~distance">distance</a></li><li data-type='method'><a href="module-dfit.html#~distance">distance</a></li><li data-type='method'><a href="module-dfit.html#~duration">duration</a></li><li data-type='method'><a href="module-dfit.html#~duration">duration</a></li><li data-type='method'><a href="module-dfit.html#~interval">interval</a></li><li data-type='method'><a href="module-dfit.html#~interval">interval</a></li><li data-type='method'><a href="module-dfit.html#~pace">pace</a></li><li data-type='method'><a href="module-dfit.html#~pace">pace</a></li><li data-type='method'><a href="module-dfit.html#~speed">speed</a></li><li data-type='method'><a href="module-dfit.html#~speed">speed</a></li></ul></li><li></li><li><a href="module-Distance.html">Distance</a></li><li></li><li><a href="module-Duration.html">Duration</a></li><li></li><li><a href="module-Pace.html">Pace</a></li><li></li><li></li><li></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">modules/distance/index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Distance Module
+ * @module Distance
+ */
+
+/**
+ * Default unit used when units not given
+ * @constant
+ */
+const DEFAULT_DISTANCE_UNIT = "m";
+
+/**
+ * Units Relative to One Meter
+ * @constant
+ */
+const RELATIVE_DISTANCE_UNIT = {
+  km: 1000,
+  m: 1,
+  cm: 0.01,
+  mm: 0.001,
+  mile: 1609.344,
+  miles: 1609.344
+};
+
+class Distance {
+  /**
+   * Creates a distance object that standardizes all incoming data and is useful in making conversions
+   * @param {object|number|undefined} distance -
+   * @param {'km'|'m'|'cm'|'mm'|'mile'|'miles'} [unit]
+   */
+  constructor(distance, unit) {
+    switch (typeof distance) {
+      case "object":
+        this._data = Distance._constructFromObj(distance);
+        break;
+      case "number":
+        this._data = Distance._constructFromValueAndUnit(distance, unit);
+        break;
+      case "undefined":
+        this._data = 0;
+        break;
+      default:
+        throw new Error("Invalid constructor argument");
+    }
+  }
+
+  /**
+   * Standardizes incoming distance values
+   * @param {Number} value
+   * @param {'km'|'m'|'cm'|'mm'|'mile'|'miles'} unit
+   * @returns {Number}
+   */
+  static _constructFromValueAndUnit(value, unit) {
+    return value * RELATIVE_DISTANCE_UNIT[unit || DEFAULT_DISTANCE_UNIT];
+  }
+
+  /**
+   * Calculates distance by summing all valid distances sent with the object
+   * @param {Object} obj
+   * @param {Number} [obj.km]
+   * @param {Number} [obj.m]
+   * @param {Number} [obj.cm]
+   * @param {Number} [obj.mm]
+   * @param {Number} [obj.mile]
+   * @param {Number} [obj.miles]
+   * @returns {Number} 0 or the sum of valid distances
+   */
+  static _constructFromObj(obj) {
+    let distance = 0;
+    for (let unit in obj) {
+      distance += this._constructFromValueAndUnit(obj[unit], unit);
+    }
+    return distance;
+  }
+
+  /**
+   * Returns the distance converted to the given units
+   * @param {'km'|'m'|'cm'|'mm'|'mile'|'miles'} [unit=DEFAULT_DISTANCE_UNIT]
+   * @returns {Number}
+   */
+  convert(unit) {
+    if (
+      arguments.length &amp;&amp;
+      (unit === null || !RELATIVE_DISTANCE_UNIT.hasOwnProperty(unit))
+    )
+      throw new Error("Unit provided to convert is invalid");
+
+    return this._data / RELATIVE_DISTANCE_UNIT[unit || DEFAULT_DISTANCE_UNIT];
+  }
+
+  /**
+   * Updates the distance given a new value and unit and returns 'this' to allow chaining
+   * @param {Number} value
+   * @param {'km'|'m'|'cm'|'mm'|'mile'|'miles'} unit
+   * @returns {this}
+   */
+  _updateAndChain(value, unit) {
+    this._data = _constructFromValueAndUnit(value, unit);
+    return this;
+  }
+
+  /**
+   * Gets, or optionally sets, the distance in kilometers
+   * @param {Number} [value]
+   * @returns {this|Number}
+   */
+  km(value) {
+    return arguments.length !== 0
+      ? this._updateAndChain(value, "km")
+      : this.convert("km");
+  }
+
+  /**
+   * Gets, or optionally sets, the distance in meters
+   * @param {Number} [value]
+   * @returns {this|Number}
+   */
+  m(value) {
+    return arguments.length !== 0
+      ? this._updateAndChain(value, "m")
+      : this.convert("m");
+  }
+
+  /**
+   * Gets, or optionally sets, the distance in centimeters
+   * @param {Number} [value]
+   * @returns {this|Number}
+   */
+  cm(value) {
+    return arguments.length !== 0
+      ? this._updateAndChain(value, "cm")
+      : this.convert("cm");
+  }
+
+  /**
+   * Gets, or optionally sets, the distance in millimeters
+   * @param {Number} [value]
+   * @returns {this|Number}
+   */
+  mm(value) {
+    return arguments.length !== 0
+      ? this._updateAndChain(value, "mm")
+      : this.convert("mm");
+  }
+
+  /**
+   * Gets, or optionally sets, the distance in miles
+   * @param {Number} [value]
+   * @returns {this|Number}
+   */
+  miles(value) {
+    return arguments.length !== 0
+      ? this._updateAndChain(value, "miles")
+      : this.convert("miles");
+  }
+
+  /**
+   * Adds a given distance to the current distance
+   * @param {Number} value
+   * @param {'km'|'m'|'cm'|'mm'|'mile'|'miles'} unit
+   * @returns {this}
+   */
+  add(value, unit) {
+    this._data += _constructFromValueAndUnit(value, unit);
+    return this;
+  }
+
+  /**
+   * Subtracts a given distance from the current distance
+   * @param {Number} value
+   * @param {'km'|'m'|'cm'|'mm'|'mile'|'miles'} unit
+   * @returns {this}
+   */
+  subtract(value, unit) {
+    this._data -= _constructFromValueAndUnit(value, unit);
+    return this;
+  }
+}
+
+module.exports = Distance;
+module.exports.RELATIVE_DISTANCE_UNIT = RELATIVE_DISTANCE_UNIT;
+module.exports.DEFAULT_DISTANCE_UNIT = DEFAULT_DISTANCE_UNIT;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Dec 10 2019 16:21:38 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

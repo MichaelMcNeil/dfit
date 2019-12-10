@@ -53,9 +53,6 @@ const speed = (...args) => new Speed(...args);
  */
 const pace = (...args) => new Pace(...args);
 
-/**
- * @exports
- */
 module.exports = {
   duration,
   distance,
