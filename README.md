@@ -13,21 +13,30 @@ dfit.distance();
 dfit.duration();
 dfit.speed();
 dfit.pace();
+```
 
-// Creating Durations
+#### Creating Durations
 
+```javascript
 // with an object
-dfit.duration({ h: 2, m: 55, s: 00 });
+let dur;
+dur = dfit.duration({ h: 2, m: 55, s: 00 });
+dur.pretty(); // '2:55:00'
 
 // with a string
-dfit.duration("2:55:00");
+dur = dfit.duration("2:55:00");
+dur.pretty(); // '2:55:00'
 
 // with a number and unit
-dfit.duration(2, "h");
+dur = dfit.duration(2, "h");
+dur.pretty(); // '2:00:00'
 
 // adding or subtracting
-dfit.duration(2, "h").add({ m: 55 });
-dfit.duration("3:00:00").subtract(5, "m");
+dur = dfit.duration(2, "h").add({ m: 55 });
+dur.pretty(); // '2:55:00'
+
+dur = dfit.duration("3:00:00").subtract(5, "m");
+dur.pretty(); // '2:55:00'
 ```
 
 ### Installation
