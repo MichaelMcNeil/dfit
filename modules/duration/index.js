@@ -26,9 +26,7 @@ class Duration {
         this._data = moment.duration(arg1);
         break;
       default:
-        throw new Error(
-          "typeof value provided to Time constructor is invalid."
-        );
+        this._data = moment.duration();
     }
   }
 
